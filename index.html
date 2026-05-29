@@ -4,13 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <title>FitLog AI</title>
-<link rel="manifest" href="/Fitlog-ai/manifest.json">
-<meta name="theme-color" content="#080b10">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="FitLog AI">
-<link rel="apple-touch-icon" href="./icons/icon-192.png">
-
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -657,7 +650,7 @@
       </div>
       <div class="ai-row">
         <button class="ai-btn" id="ex-ai-btn" onclick="aiExercise()" style="width:100%;justify-content:center;">
-          <span id="ex-btn-txt">⚡ Kcal Calculate & Log</span>
+          <span id="ex-btn-txt">⚡ AI Calculate & Log</span>
           <div class="spinner" id="ex-spin"></div>
         </button>
       </div>
@@ -787,7 +780,7 @@ function buildMealGroup(meal) {
         <div class="ai-row">
           <input class="ai-input" id="ai-${meal}" placeholder="Type food... e.g. 2 eggs, green tea, biryani">
           <button class="ai-btn" id="aibtn-${meal}" onclick="aiLookup('${meal}')">
-            <span id="aibtntxt-${meal}">⚡ Kcal</span>
+            <span id="aibtntxt-${meal}">⚡ AI</span>
             <div class="spinner" id="aispin-${meal}"></div>
           </button>
         </div>
@@ -1091,16 +1084,6 @@ renderWater();
 updateHeader();
 const d = new Date();
 document.title = 'FitLog AI — ' + d.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'});
-</script>
-
-<script>
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", function() {
-    navigator.serviceWorker.register("./sw.js")
-      .then(function(r){ console.log("SW OK"); })
-      .catch(function(e){ console.log("SW fail", e); });
-  });
-}
 </script>
 </body>
 </html>
